@@ -1,18 +1,18 @@
-import axios from "../config1";
+import { instanceForChampions } from '../config';
 
 
 export const championsServices = () =>{
 
     //info para recuadros individuales para campeon
     const getChampionsList= ()=>{
-        return axios ({
+        return instanceForChampions ({
             method: 'GET',
             url: '/11.23.1/data/en_US/champion.json'
         })
     };
 
     const getChampionLoadingSkim =(championName)=>{
-        return axios ({
+        return instanceForChampions ({
             method: 'GET',
             url: `img/champion/loading/${championName}_0.jpg`
         })
@@ -20,28 +20,28 @@ export const championsServices = () =>{
 
     //info para pagina individual del campeon
     const getChampionByName =(championName)=>{
-        return axios ({
+        return instanceForChampions ({
             method: 'GET',
             url: `11.23.1/data/en_US/champion/${championName}.json`
         })
     }
 
     const getChampionSplashArts =(championName)=>{
-        return axios ({
+        return instanceForChampions ({
             method: 'GET',
             url: `img/champion/splash/${championName}.jpg`
         })
     }
 
     const getChampionPassiveImg =(passiveName)=>{
-        return axios({
+        return instanceForChampions({
             method:'GET',
             url: `cdn/11.23.1/img/passive/${passiveName}.png`
         })
     }
 
     const getChampionAbilityImg =(abilityName)=>{
-        return axios ({
+        return instanceForChampions ({
             method: 'GET',
             url: `cdn/11.23.1/img/spell/${abilityName}.png`
         })
