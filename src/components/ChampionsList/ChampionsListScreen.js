@@ -1,9 +1,23 @@
-import React from 'react'
+import React from 'react';
+
+import { ChampionNavbar } from './ChampionNavbar';
+import { ChampionCard } from './ChampionCard';
+import { Typography } from '@mui/material';
 
 export const ChampionsListScreen = () => {
     return (
         <div>
-            ChampionsListScreen
+            <Typography variant="h3" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1 }}>
+            CHOOSE YOUR
+            </Typography>
+            <Typography variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1 }}>
+            CHAMPION
+            </Typography>
+            <Typography variant="subtitle1" component="div"sx={{ textAlign: 'center',fontWeight: 'light',letterSpacing: 8, m: 1, pr:"20%", pl: "20%" }} >
+            Considering there are over 140 champions, it won't take long to find your style of play. Dominate one or all.
+            </Typography>
+            <ChampionNavbar/>
+            <ChampionCard />
         </div>
     )
 }

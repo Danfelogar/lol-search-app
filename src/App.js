@@ -9,7 +9,7 @@ import { store } from "./store/store";
 function App() {
   return (
     <Provider store={ store }>
-      <ThemeProvider theme={ theme } >
+      <ThemeProvider theme={ theme }  >
         <AppRouter/>
       </ThemeProvider>
     </Provider>
