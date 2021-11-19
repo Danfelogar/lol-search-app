@@ -6,7 +6,7 @@ theme.palette.primary ={
     main: '#023047'
 };
 theme.palette.secondary ={
-    main: '#fb8500'
+    main: '#ffb703'
 };
 theme.palette.success ={
     main: '#edf2f4'
@@ -47,3 +47,4 @@ theme.typography.subtitle1 = {
         fontSize: '1.15rem',
     },
 };
+

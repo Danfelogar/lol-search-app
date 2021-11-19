@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ChampionNavbar } from './ChampionNavbar';
 import { ChampionCard } from './ChampionCard';
 import { Typography } from '@mui/material';
+import { ChampionNavbar } from './ChampionNavbar/ChampionNavbar';
 
 export const ChampionsListScreen = () => {
     return (
