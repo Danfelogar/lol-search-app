@@ -5,14 +5,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Container } from '@mui/material';
 
 import { useChampionCard } from '../../hooks/useChampionCard';
+
 
 export const ChampionCard = () => {
 
     const { champions, getTagsByRole } = useChampionCard();
-    console.log(typeof(champions))
 
     return (
     <Box sx={{ flexGrow: 1, m:5 }}>
@@ -41,22 +41,31 @@ export const ChampionCard = () => {
                                 className="container_text"
                                 sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold'}}
                                 gutterBottom variant="h5" component="div">
-                                    {champion.id}
+                                    <Container
+                                    sx={{display: "flex",
+                                    flexDirection: "inline",
+                                    justifyContent:"center",
+                                    alignContent:"center"}}
+                                    maxWidth="25">
                                     {
                                         champion.tags.map((tag,idx)=>{
-                                            const imgRole=()=>getTagsByRole(tag);
-                                            console.log(imgRole(tag))
+                                            console.log(getTagsByRole(tag));
                                             return(
                                                 <CardMedia
                                                 key={idx}
-                                                component="img"
-                                                height="40"
-                                                width="20"
-                                                img={()=>imgRole()}
+                                                sx={{
+                                                    height:"30px",
+                                                    width:"30px",
+                                                    ml:0.5,
+                                                    mr:0.5
+                                                }}
+                                                image={getTagsByRole(tag)}
                                                 />
                                             )
                                         })
                                     }
+                                    </Container>
+                                    {champion.id}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

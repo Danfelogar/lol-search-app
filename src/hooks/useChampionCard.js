@@ -18,14 +18,15 @@ export const useChampionCard = () => {
 
     const tags ={
         Assassin :'https://i.pinimg.com/originals/e8/47/3a/e8473a6f08154fa824335699828d57b1.png',
-        Fighter :'https://static.wikia.nocookie.net/roleo-que-no-es-de-lol/images/9/92/Icono_Luchador.png/revision/latest?cb=20181122190750&path-prefix=es',
-        Mage :'https://static.wikia.nocookie.net/leagueoflegendsoficial/images/6/69/Mago_old.png/revision/latest?cb=20160701013248&path-prefix=es',
-        Marksman :'https://static.wikia.nocookie.net/leagueoflegendsoficial/images/3/37/Tirador_old.png/revision/latest?cb=20160701013315&path-prefix=es',
-        Support :'https://static.wikia.nocookie.net/leagueoflegends/images/0/0e/Support_Role.png/revision/latest?cb=20141008220013&path-prefix=es',
-        Tank :'https://static.wikia.nocookie.net/leagueoflegendsoficial/images/9/91/Tanque_old.png/revision/latest?cb=20160701013307&path-prefix=es'
+        Fighter :'https://img.rankedboost.com/wp-content/uploads/2017/07/Fighter.png',
+        Mage :'https://img.rankedboost.com/wp-content/uploads/2017/07/Mage-1.png',
+        Marksman :'https://www.pngkit.com/png/full/26-263030_marksman-tier-list-league-of-legends-roles-png.png',
+        Support :'https://i.pinimg.com/originals/bf/3f/88/bf3f88c18d6385422c5bb23a595327d0.png',
+        Tank :'https://img.rankedboost.com/wp-content/uploads/2017/07/Tank-1.png'
     }
 
-    const getTagsByRole = (role) => tags[role];
+    const getTagsByRole = (role) =>{ return tags[role]};
+
 
     return {
         champions,
