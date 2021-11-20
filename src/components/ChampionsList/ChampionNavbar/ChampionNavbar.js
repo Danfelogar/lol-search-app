@@ -16,6 +16,9 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import { Hidden } from '@mui/material';
 
+import { useChampionNavbar } from '../../../hooks/useChampionNavbar';
+
+
 //search button
 
 const Search = styled('div')(({ theme }) => ({
@@ -68,6 +71,10 @@ const options = ['All','Easy', 'Regular', 'Hard'];
 
 export const ChampionNavbar = () => {
 
+    const { championName, handleInputChange, } = useChampionNavbar();
+
+    console.log(championName)
+
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
     const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -92,7 +99,6 @@ export const ChampionNavbar = () => {
 
         setOpen(false);
     };
-
     return (
     <Box sx={{ flexGrow: 1, m:2 }}>
         <AppBar sx={{borderRadius: 9}} position="sticky">
@@ -109,6 +115,10 @@ export const ChampionNavbar = () => {
                         }}
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
+                        name="championName"
+                        onChange={handleInputChange}
+                        value={championName}
+                        autoComplete="off"
                     />
                 </Search>
                 <Hidden smDown >

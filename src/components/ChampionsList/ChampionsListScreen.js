@@ -5,6 +5,7 @@ import { Typography } from '@mui/material';
 import { ChampionNavbar } from './ChampionNavbar/ChampionNavbar';
 
 export const ChampionsListScreen = () => {
+
     return (
         <div>
             <Typography variant="h3" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 0, color:'#edf2f4' }}>
