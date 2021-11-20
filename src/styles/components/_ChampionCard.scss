@@ -4,10 +4,8 @@
 .container_img{
     transform: scale(1);
     transition: 0.3s ease-in-out;
-    
 }
-
 .container_img:hover{
-    transform: scale(1.5);
+    transform: scale(1.1);
     border-bottom: 30px solid steelblue;
 }

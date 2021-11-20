@@ -70,7 +70,7 @@ export const ChampionNavbar = () => {
 
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const handleClick = () => {
         console.info(`You clicked ${options[selectedIndex]}`);
@@ -95,7 +95,7 @@ export const ChampionNavbar = () => {
 
     return (
     <Box sx={{ flexGrow: 1, m:2 }}>
-        <AppBar sx={{borderRadius: 9}} position="static">
+        <AppBar sx={{borderRadius: 9}} position="sticky">
             <Toolbar>
                 <Search sx={{mr:1}}>
                     <SearchIconWrapper sx={{
@@ -127,24 +127,27 @@ export const ChampionNavbar = () => {
                         <ButtonGroup variant="text" aria-label="text button group">
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }}  >All</Button>
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >All</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4'
-                            }} >Fighters</Button>
+                                borderRight: '1.2px solid #edf2f4 '
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Assassin</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4'
-                            }} >Magicians</Button>
+                                borderRight: '1.2px solid #edf2f4 '
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Fighter</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4'
-                            }} >Shooters</Button>
+                                borderRight: '1.2px solid #edf2f4 '
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Mage</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4'
-                            }} >Supports</Button>
-                            <Button variant="text" color="success">Tanks</Button>
+                                borderRight: '1.2px solid #edf2f4 '
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Marksman</Button>
+                            <Button variant="text" color="success" style={{
+                                borderRight: '1.2px solid #edf2f4 '
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Support</Button>
+                            <Button variant="text" color="success" sx={{pl: 0.4, pt: 0, pr:0.4 ,pb:0 }}>Tank</Button>
                         </ButtonGroup>
                     </Box>
                 </Hidden>
-                <Hidden only="sm" >
+                <Hidden only="sm">
                     <ButtonGroup ref={anchorRef} aria-label="split button">
                         <Button variant="contained" color="secondary" onClick={handleClick}>{options[selectedIndex]}</Button>
                         <Button
