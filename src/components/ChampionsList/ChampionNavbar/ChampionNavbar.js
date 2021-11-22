@@ -71,9 +71,11 @@ const options = ['All','Easy', 'Regular', 'Hard'];
 
 export const ChampionNavbar = () => {
 
-    const { championName, handleInputChange, } = useChampionNavbar();
+    //customhooks
 
-    console.log(championName)
+    const { championName, handleInputChange, } = useChampionNavbar();
+    //helpe esta parte de arriba hace que se realentice mi aplicacin
+    //material ui
 
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);

@@ -1,6 +1,5 @@
 import { types } from '../types/types';
 import { championsServices } from '../servicies/champions/index';
-
 const { getChampionsList } = championsServices();
 
 
@@ -18,16 +17,19 @@ const actGetChampionsList = () =>async(dispatch)=>{
     }
 }
 
-// const actGetChampionLoadingSkim =(championName)=> async(dispatch)=>{
-//     try {
-        
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
+const actGetSearchChampion = (championName)=>(dispatch)=>{
+
+    const name = championName.toLowerCase();
+
+    dispatch({
+        type: types.getSearchChampion,
+        payload: name
+    })
+}
 
 export const championsActions = ()=>{
     return{
-        actGetChampionsList
+        actGetChampionsList,
+        actGetSearchChampion
     }
 }
