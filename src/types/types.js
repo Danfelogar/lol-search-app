@@ -1,4 +1,6 @@
 export const types ={
     getallChampions: '[champions] show all champions',
-    getSearchChampion: '[champions] search champion by name'
+    getSearchChampion: '[champions] search champion by name',
+    getTagsChampion: '[champions] filter champion by tags',
+    getDifficultyChampion: '[champions] folter champion by difficulty'
 }

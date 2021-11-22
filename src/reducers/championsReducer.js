@@ -3,7 +3,9 @@ import { types } from "../types/types";
 
 const initialState ={
     champions:[],
-    searchChampion:{}
+    searchChampion:{},
+    tagChampion:"All",
+    difficultyChampion: "All"
 }
 
 export const championsReducer =(state=initialState, action)=>{
@@ -17,6 +19,16 @@ export const championsReducer =(state=initialState, action)=>{
             return{
                 ...state,
                 searchChampion: action.payload
+            }
+        case types.getTagsChampion:
+            return{
+                ...state,
+                tagChampion: action.payload
+            }
+        case types.getDifficultyChampion:
+            return{
+                ...state,
+                difficultyChampion: action.payload
             }
         default:
             return state;

@@ -10,7 +10,7 @@ export const useChampionNavbar = () => {
 
     const [ formValues, handleInputChange ] = useForm({championName: ''});
 
-    const { actGetSearchChampion } = championsActions();
+    const { actGetSearchChampion,actGetTagChampion, actGetDifficultyChampion } = championsActions();
 
     const { championName } = formValues;
 
@@ -18,10 +18,18 @@ export const useChampionNavbar = () => {
         dispatch(actGetSearchChampion(championName));
     },[dispatch,actGetSearchChampion,championName])
 
+    const handleTag = (tag)=>{
+        dispatch(actGetTagChampion(tag))
+    }
 
+    const handleDifficulty =(difficulty)=>{
+        dispatch(actGetDifficultyChampion(difficulty))
+    }
     return {
         formValues,
         championName,
         handleInputChange,
+        handleTag,
+        handleDifficulty
     }
 }

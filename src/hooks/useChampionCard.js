@@ -13,6 +13,7 @@ export const useChampionCard = () => {
 
     useEffect(() => {
         dispatch(actGetChampionsList());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const tags ={

@@ -73,8 +73,8 @@ export const ChampionNavbar = () => {
 
     //customhooks
 
-    const { championName, handleInputChange, } = useChampionNavbar();
-    //helpe esta parte de arriba hace que se realentice mi aplicacin
+    const { championName, handleInputChange, handleTag, handleDifficulty } = useChampionNavbar();
+
     //material ui
 
     const [open, setOpen] = React.useState(false);
@@ -82,7 +82,8 @@ export const ChampionNavbar = () => {
     const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const handleClick = () => {
-        console.info(`You clicked ${options[selectedIndex]}`);
+        // console.info(`You clicked ${options[selectedIndex]}`);
+        handleDifficulty(options[selectedIndex])
     };
 
     const handleMenuItemClick = (event, index) => {
@@ -137,25 +138,38 @@ export const ChampionNavbar = () => {
                     }}
                     >
                         <ButtonGroup variant="text" aria-label="text button group">
+                            <Button variant="text" color="success"  style={{
+                                borderRight: '1.2px solid #edf2f4'
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            onClick={()=>handleTag("All")}
+                            >All</Button>
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >All</Button>
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            onClick={()=>handleTag("Assassin")} >Assassin</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4 '
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Assassin</Button>
+                                borderRight: '1.2px solid #edf2f4'
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            onClick={()=>handleTag("Fighter")}
+                            >Fighter</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4 '
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Fighter</Button>
+                                borderRight: '1.2px solid #edf2f4'
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            onClick={()=>handleTag("Mage")}
+                            >Mage</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4 '
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Mage</Button>
+                                borderRight: '1.2px solid #edf2f4'
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            onClick={()=>handleTag("Marksman")}
+                            >Marksman</Button>
                             <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4 '
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Marksman</Button>
-                            <Button variant="text" color="success" style={{
-                                borderRight: '1.2px solid #edf2f4 '
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}} >Support</Button>
-                            <Button variant="text" color="success" sx={{pl: 0.4, pt: 0, pr:0.4 ,pb:0 }}>Tank</Button>
+                                borderRight: '1.2px solid #edf2f4'
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            onClick={()=>handleTag("Support")}
+                            >Support</Button>
+                            <Button variant="text" color="success" sx={{pl: 0.4, pt: 0, pr:0.4 ,pb:0 }}
+                            onClick={()=>handleTag("Tank")}
+                            >Tank</Button>
                         </ButtonGroup>
                     </Box>
                 </Hidden>

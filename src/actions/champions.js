@@ -27,9 +27,25 @@ const actGetSearchChampion = (championName)=>(dispatch)=>{
     })
 }
 
+const actGetTagChampion = (tag)=>(dispatch)=>{
+    dispatch({
+        type: types.getTagsChampion,
+        payload: tag
+    })
+}
+
+const actGetDifficultyChampion = (difficulty)=>(dispatch)=>{
+    dispatch({
+        type: types.getDifficultyChampion,
+        payload: difficulty
+    })
+}
+
 export const championsActions = ()=>{
     return{
         actGetChampionsList,
-        actGetSearchChampion
+        actGetSearchChampion,
+        actGetTagChampion,
+        actGetDifficultyChampion
     }
 }
