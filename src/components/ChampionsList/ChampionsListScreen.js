@@ -8,7 +8,7 @@ export const ChampionsListScreen = () => {
 
     return (
         <div>
-            <Typography variant="h3" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 0, color:'#edf2f4' }}>
+            <Typography variant="h3" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 0, pt:1, color:'#edf2f4' }}>
             CHOOSE YOUR
             </Typography>
             <Typography variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1, color:'#edf2f4' }}>

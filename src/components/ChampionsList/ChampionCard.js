@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-
 import { useChampionCard } from '../../hooks/useChampionCard';
 import { ChampionIndividualCard } from './ChampionIndividualCard';
 import { ChampionNotFound } from './ChampionNotFound';
@@ -34,6 +33,11 @@ export const ChampionCard = () => {
                         </Grid>
                     )
                 })
+            }
+            {
+                ((champions.filter(e=>e.id.toLowerCase().includes(searchChampion)).length === 0 ) && searchChampion !== "")
+                &&
+                <ChampionNotFound />
             }
         </Grid>
     </Box>
