@@ -3,6 +3,7 @@ import { types } from "../types/types";
 
 const initialState ={
     champions:[],
+    championById:[],
     searchChampion:{},
     tagChampion:"All",
     difficultyChampion: "All"
@@ -29,6 +30,11 @@ export const championsReducer =(state=initialState, action)=>{
             return{
                 ...state,
                 difficultyChampion: action.payload
+            }
+        case types.getChampionById:
+            return{
+                ...state,
+                championById: action.payload
             }
         default:
             return state;

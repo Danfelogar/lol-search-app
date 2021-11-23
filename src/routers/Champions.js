@@ -14,7 +14,7 @@ export const Champions = () => {
                 component={ ChampionsListScreen } />
                 <Route
                 exact
-                path="/champions/1"
+                path="/champions/:id"
                 component={ ChampionByIdScreen } />
 
                 <Redirect to="/summonerSearch" />

@@ -1,6 +1,6 @@
 import { types } from '../types/types';
 import { championsServices } from '../servicies/champions/index';
-const { getChampionsList } = championsServices();
+const { getChampionsList, getChampionByName } = championsServices();
 
 
 const actGetChampionsList = () =>async(dispatch)=>{
@@ -41,11 +41,25 @@ const actGetDifficultyChampion = (difficulty)=>(dispatch)=>{
     })
 }
 
+const actGetChampionById = (championId)=>async(dispatch)=>{
+    try {
+        const  res = await getChampionByName(championId);
+        const { data } = res.data
+        dispatch({
+            type: types.getChampionById,
+            payload: Object.values(data)
+        });
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 export const championsActions = ()=>{
     return{
         actGetChampionsList,
         actGetSearchChampion,
         actGetTagChampion,
-        actGetDifficultyChampion
+        actGetDifficultyChampion,
+        actGetChampionById
     }
 }
