@@ -6,7 +6,7 @@ import { ChampionsListScreen } from '../components/ChampionsList/ChampionsListSc
 
 export const Champions = () => {
     return (
-        <div className="championWarp">
+        <div>
             <Switch>
                 <Route
                 exact
