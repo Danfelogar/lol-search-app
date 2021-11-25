@@ -5,6 +5,7 @@ import { Card, CardContent, Container, Typography } from '@mui/material';
 import { useChampionByid } from '../../hooks/useChampionByid';
 import { useChampionCard } from '../../hooks/useChampionCard';
 import { ChampionByIdSkills } from './ChampionByIdSkills';
+import { ChampionByIdSlider } from './ChampionByIdSlider';
 
 export const ChampionByIdScreen = () => {
 
@@ -15,7 +16,6 @@ export const ChampionByIdScreen = () => {
     return (
         <div>
             {championById.map((champion,idx)=>{
-                    const championKey = champion.key;
                 return(
                     <Card
                     sx={{bgcolor:"primary.main"}}
@@ -128,12 +128,12 @@ export const ChampionByIdScreen = () => {
                         sx={{
                             bgcolor: 'primary.main',
                             mt: "230px",
-                            pb: 2
+                            pb: 4
                             }}
                         >
                             <ChampionByIdSkills
-                            numberIdChampion={championKey}
                             {...champion }/>
+                            <ChampionByIdSlider/>
                         </Card>
                     </Card>
                 )

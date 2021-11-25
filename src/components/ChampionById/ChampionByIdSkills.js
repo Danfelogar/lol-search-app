@@ -3,19 +3,22 @@ import { useChampionByid } from "../../hooks/useChampionByid"
 
 export const ChampionByIdSkills = (champion) => {
 
-    let keyChampion = champion.numberIdChampion;
-
-    const { handleChangeSkills,skillVideo,
+    const { championById,handleChangeSkills,skillVideo,
         skillName,skillDescription, keyIdChamp } = useChampionByid();
+
+        // let keyChampion = champion.numberIdChampion;
+
+        const keyChampion = championById.map(champ=> {return champ.key}).toString();
     return (
         <CardContent
         sx={{
             display: "flex",
             flexDirection: "column",
-            backgroundColor: 'primary.dark',
+            backgroundColor: 'primary.main',
             pl: "6%",
             pr: "6%",
-            justifyContent: "center"
+            justifyContent: "center",
+            // alignItems: "center"
         }}
         >
             <Typography variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1, color:'#edf2f4' }}>
@@ -113,7 +116,7 @@ export const ChampionByIdSkills = (champion) => {
                     onClick={()=>handleChangeSkills('R',champion.spells[3].name,champion.spells[3].description,keyChampion)}
                     />
                 {/* {
-                    intente hacer un map extra pero como la documentacion los campeones viejos difieren de algunos datos de los nuevos no es posible mapear comodamente 
+                    intente hacer un map extra pero como la documentacion los campeones viejos difieren de algunos datos de los nuevos no es posible mapear comodamente
                     champion.spells.map((spell,idx)=>{
                         const linkVideo = spell.id.slice(-1);
                         return(
@@ -139,13 +142,15 @@ export const ChampionByIdSkills = (champion) => {
                 } */}
             </CardContent>
             <video
+            className="championVideo"
             src={`https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${keyIdChamp}/ability_${keyIdChamp}_${skillVideo}1.webm`}
             autoPlay={true}
             loop={true}
             muted={true}
             style={{
-                minWidth:"350px",
-                minHeight:"300px"
+                maxWidth: "550px",
+                padding: "0",
+                margin: "0 auto"
             }}
             />
             <Typography variant="subtitle1" component="div" sx={{ fontStyle: 'italic', textAlign: 'justify',fontWeight: 'bold',letterSpacing: 6, m: 1.5, color:'#edf2f4' }}>
