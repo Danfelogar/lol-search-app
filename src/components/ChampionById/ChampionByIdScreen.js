@@ -15,6 +15,7 @@ export const ChampionByIdScreen = () => {
     return (
         <div>
             {championById.map((champion,idx)=>{
+                    const championKey = champion.key;
                 return(
                     <Card
                     sx={{bgcolor:"primary.main"}}
@@ -46,7 +47,7 @@ export const ChampionByIdScreen = () => {
                             }}
                             sx={{
                                 position:"absolute",
-                                mt: "40%",
+                                mt: "280px",
                                 border: 2.5,
                                 borderColor: 'error.main',
                                 borderRadius: '1px 40px',
@@ -125,10 +126,14 @@ export const ChampionByIdScreen = () => {
                         </Card>
                         <Card
                         sx={{
-                            // bgcolor: 'primary.main',
-                            mt: "20%"}}
+                            bgcolor: 'primary.main',
+                            mt: "230px",
+                            pb: 2
+                            }}
                         >
-                            <ChampionByIdSkills {...champion}/>
+                            <ChampionByIdSkills
+                            numberIdChampion={championKey}
+                            {...champion }/>
                         </Card>
                     </Card>
                 )
