@@ -21,7 +21,7 @@ export const ChampionByIdSkills = (champion) => {
             // alignItems: "center"
         }}
         >
-            <Typography variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1, color:'#edf2f4' }}>
+            <Typography className="animate__animated animate__flash animate__fast" variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1, color:'#edf2f4' }}>
                 Skills
             </Typography>
             <CardContent
@@ -35,7 +35,7 @@ export const ChampionByIdSkills = (champion) => {
             justifyContent: "center"
             }}
             >
-                <Avatar
+                <Avatar className="animate__animated animate__rotateIn animate__fast animate__repeat-2"
                 alt="Remy Sharp"
                 src={`http://ddragon.leagueoflegends.com/cdn/11.23.1/img/passive/${champion.passive.image.full}`}
                 sx={{
@@ -51,7 +51,7 @@ export const ChampionByIdSkills = (champion) => {
                     }}
                 onClick={()=>handleChangeSkills('P',champion.passive.name,champion.passive.description,keyChampion)}
                 />
-                <Avatar
+                <Avatar className="animate__animated animate__rotateIn animate__fast animate__repeat-2"
                     alt="Remy Sharp"
                     src={`http://ddragon.leagueoflegends.com/cdn/11.23.1/img/spell/${champion.spells[0].image.full}`}
                     sx={{
@@ -67,7 +67,7 @@ export const ChampionByIdSkills = (champion) => {
                         }}
                     onClick={()=>handleChangeSkills('Q',champion.spells[0].name,champion.spells[0].description,keyChampion)}
                     />
-                <Avatar
+                <Avatar className="animate__animated animate__rotateIn animate__fast animate__repeat-2"
                     alt="Remy Sharp"
                     src={`http://ddragon.leagueoflegends.com/cdn/11.23.1/img/spell/${champion.spells[1].image.full}`}
                     sx={{
@@ -83,7 +83,7 @@ export const ChampionByIdSkills = (champion) => {
                         }}
                     onClick={()=>handleChangeSkills('W',champion.spells[1].name,champion.spells[1].description,keyChampion)}
                     />
-                <Avatar
+                <Avatar className="animate__animated animate__rotateIn animate__fast animate__repeat-2"
                     alt="Remy Sharp"
                     src={`http://ddragon.leagueoflegends.com/cdn/11.23.1/img/spell/${champion.spells[2].image.full}`}
                     sx={{
@@ -99,7 +99,7 @@ export const ChampionByIdSkills = (champion) => {
                         }}
                     onClick={()=>handleChangeSkills('E',champion.spells[2].name,champion.spells[2].description,keyChampion)}
                     />
-                <Avatar
+                <Avatar className="animate__animated animate__rotateIn animate__fast animate__repeat-2"
                     alt="Remy Sharp"
                     src={`http://ddragon.leagueoflegends.com/cdn/11.23.1/img/spell/${champion.spells[3].image.full}`}
                     sx={{

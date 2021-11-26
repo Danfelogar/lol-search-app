@@ -13,7 +13,7 @@ export const ChampionIndividualCard = (champion) => {
     const { getTagsByRole } = useChampionCard();
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card className="animate__animated animate__backInUp animate__fast" sx={{ maxWidth: 345 }}>
             <Link
             style={{
                 textDecoration: "none",

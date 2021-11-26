@@ -103,7 +103,7 @@ export const ChampionNavbar = () => {
         setOpen(false);
     };
     return (
-    <Box sx={{ flexGrow: 1, m:2 }}>
+    <Box  sx={{ flexGrow: 1, m:2 }}>
         <AppBar sx={{borderRadius: 9}} position="sticky">
             <Toolbar>
                 <Search sx={{mr:1}}>

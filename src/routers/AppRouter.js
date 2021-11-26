@@ -5,6 +5,7 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
+import { Footer } from '../components/Footer/Footer';
 
 import { Navbar } from '../components/Navbar/Navbar';
 import { Champions } from './Champions';
@@ -28,6 +29,7 @@ export const AppRouter = () => {
                         />
                         <Redirect to="/summonerSearch" />
                     </Switch>
+                <Footer/>
             </div>
         </Router>
     )

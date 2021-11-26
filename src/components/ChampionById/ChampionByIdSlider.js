@@ -24,7 +24,7 @@ export const ChampionByIdSlider = () => {
             backgroundColor: 'primary.main',
             pl: "6%",
             pr: "6%",
-            justifyContent: "center"
+            justifyContent: "center",
         }}>
             <Typography variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1, color:'#edf2f4' }}>
                 Skins

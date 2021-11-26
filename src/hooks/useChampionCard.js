@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { championsActions } from "../actions/champions"
@@ -10,6 +10,16 @@ export const useChampionCard = () => {
     const { actGetChampionsList } = championsActions();
 
     const { champions } = useSelector(state => state.champions);
+
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false)
+        }, 5000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
         dispatch(actGetChampionsList());
@@ -30,6 +40,7 @@ export const useChampionCard = () => {
 
     return {
         champions,
-        getTagsByRole
+        getTagsByRole,
+        loading
     }
 }

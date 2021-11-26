@@ -42,6 +42,7 @@ export const ChampionByIdScreen = () => {
                             }}
                             />
                             <CardContent
+                            className="animate__animated animate__backInUp animate__fast"
                             style={{
                                 paddingBottom:0
                             }}
@@ -63,7 +64,7 @@ export const ChampionByIdScreen = () => {
                                 <Typography variant="h1" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 1, color:'#edf2f4' }}>
                                     {champion.id}
                                 </Typography>
-                                <Typography variant="subtitle1" component="div"sx={{ textAlign: 'center',fontWeight: 'light',letterSpacing: 8, m: 1, color:'#edf2f4', pl:"5%",pr:"5%" }}>
+                                <Typography variant="subtitle1" component="div"sx={{ textAlign: 'center',fontWeight: 'light',letterSpacing: 8, m: 1, color:'#edf2f4' }}>
                                     {champion.lore}
                                 </Typography>
                                 <Container

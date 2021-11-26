@@ -6,17 +6,23 @@ import Grid from '@mui/material/Grid';
 import { useChampionCard } from '../../hooks/useChampionCard';
 import { ChampionIndividualCard } from './ChampionIndividualCard';
 import { ChampionNotFound } from './ChampionNotFound';
+import { ChampionLoading } from './ChampionLoading';
 
 
 export const ChampionCard = () => {
 
     const { searchChampion, tagChampion, difficultyChampion } = useSelector(state => state.champions);
 
-    const { champions } = useChampionCard();
+    const { champions,loading } = useChampionCard();
 
     return (
-    <Box sx={{ flexGrow: 1, m:5 }}>
-        <Grid container spacing={1} >
+        <>
+        {
+            loading
+        ?(<ChampionLoading/>)
+        :(<Box sx={{ flexGrow: 1, m:5,mb:0, pb:2 }}>
+        <Grid
+        container spacing={1} >
             {
                 (tagChampion === 'All')
                 ?(
@@ -93,6 +99,8 @@ export const ChampionCard = () => {
                 <ChampionNotFound />
             }
         </Grid>
-    </Box>
+    </Box>)
+        }
+        </>
     )
 }
