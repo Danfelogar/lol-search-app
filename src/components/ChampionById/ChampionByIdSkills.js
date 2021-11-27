@@ -14,7 +14,7 @@ export const ChampionByIdSkills = (champion) => {
         sx={{
             display: "flex",
             flexDirection: "column",
-            backgroundColor: 'primary.main',
+            background: 'linear-gradient(0deg, rgba(142,202,230,1) 2%, rgba(2,48,71,1) 80%)',
             pl: "6%",
             pr: "6%",
             justifyContent: "center",

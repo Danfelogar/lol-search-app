@@ -6,15 +6,21 @@ import { useChampionByid } from '../../hooks/useChampionByid';
 import { useChampionCard } from '../../hooks/useChampionCard';
 import { ChampionByIdSkills } from './ChampionByIdSkills';
 import { ChampionByIdSlider } from './ChampionByIdSlider';
+import { ChampionLoading } from '../ChampionsList/ChampionLoading';
 
 export const ChampionByIdScreen = () => {
 
     const { championById } = useChampionByid();
 
-    const { getTagsByRole } = useChampionCard();
+    const { getTagsByRole,loading } = useChampionCard();
 
     return (
-        <div>
+        <>
+        {
+            loading
+            ?(<ChampionLoading/>)
+            :(
+                <div>
             {championById.map((champion,idx)=>{
                 return(
                     <Card
@@ -52,8 +58,8 @@ export const ChampionByIdScreen = () => {
                                 border: 2.5,
                                 borderColor: 'error.main',
                                 borderRadius: '1px 40px',
-                                mr: "10%",
-                                ml: "10%",
+                                mr: "5%",
+                                ml: "5%",
                                 p:0
                             }}>
                                 <Typography variant="h3" component="div" sx={{ fontStyle: 'italic', textAlign: 'center',fontWeight: 'bold',letterSpacing: 6, m: 0, pt:1, color:'#edf2f4',
@@ -129,7 +135,7 @@ export const ChampionByIdScreen = () => {
                         sx={{
                             bgcolor: 'primary.main',
                             mt: "230px",
-                            pb: 4
+                            pb: 0
                             }}
                         >
                             <ChampionByIdSkills
@@ -140,5 +146,8 @@ export const ChampionByIdScreen = () => {
                 )
             })}
         </div>
+            )
+        }
+        </>
     )
 }
