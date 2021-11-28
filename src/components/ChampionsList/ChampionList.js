@@ -8,11 +8,12 @@ import { ChampionIndividualCard } from './ChampionIndividualCard';
 import { ChampionNotFound } from './ChampionNotFound';
 
 
-export const ChampionCard = () => {
+export const ChampionList = () => {
 
     const { searchChampion, tagChampion, difficultyChampion } = useSelector(state => state.champions);
 
     const { champions } = useChampionCard();
+
 
     return (
         <>

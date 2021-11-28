@@ -11,6 +11,19 @@ export const useChampionCard = () => {
 
     const { champions } = useSelector(state => state.champions);
 
+    // const filterChampionByName = ()=>{
+    //     //es para que me retorne algo es decir ver algo en el screen
+    //     return champions.filter((champion)=>{
+    //         //esto es lo mismo que decir "searchChampion === '' "
+    //         if(!searchChampion ){
+    //             return champion
+    //         }else {
+    //             return champion.id.toLowerCase().includes(searchChampion)
+    //         }
+    //     })
+    // }
+
+
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -22,7 +35,8 @@ export const useChampionCard = () => {
     }, []);
 
     useEffect(() => {
-        dispatch(actGetChampionsList());
+        champions.length === 0 && dispatch(actGetChampionsList())
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

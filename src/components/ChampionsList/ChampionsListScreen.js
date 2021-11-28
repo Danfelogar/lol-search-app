@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChampionCard } from './ChampionCard';
+import { ChampionList } from './ChampionList';
 import { Typography } from '@mui/material';
 import { ChampionNavbar } from './ChampionNavbar/ChampionNavbar';
 
@@ -20,7 +20,7 @@ export const ChampionsListScreen = () => {
             Considering there are over 140 champions, it won't take long to find your style of play. Dominate one or all.
             </Typography>
             <ChampionNavbar/>
-            <ChampionCard />
+            <ChampionList />
         </div>
     )
 }
