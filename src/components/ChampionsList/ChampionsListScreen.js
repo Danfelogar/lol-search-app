@@ -1,10 +1,14 @@
 import React from 'react';
-
-import { ChampionList } from './ChampionList';
 import { Typography } from '@mui/material';
 import { ChampionNavbar } from './ChampionNavbar/ChampionNavbar';
 
+import { ChampionList } from './ChampionList';
+import { useChampionCard } from '../../hooks/useChampionCard';
+import { ChampionLoading } from './ChampionLoading';
+
 export const ChampionsListScreen = () => {
+
+    const { loading } = useChampionCard();
 
     return (
         <div style={{
@@ -20,7 +24,11 @@ export const ChampionsListScreen = () => {
             Considering there are over 140 champions, it won't take long to find your style of play. Dominate one or all.
             </Typography>
             <ChampionNavbar/>
-            <ChampionList />
+            {
+                (loading)
+                ?(<ChampionLoading/>)
+                :(<ChampionList />)
+            }
         </div>
     )
 }

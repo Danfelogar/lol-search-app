@@ -30,7 +30,7 @@ export const useChampionCard = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false)
-        }, 2000);
+        }, 700);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -57,7 +57,7 @@ export const SummonerSearchScreen = () => {
     };
 
     return (
-        <Box sx={{ bgcolor:"error.main",display:"flex", flexDirection:"column", flexGrow: 1, justifyContent:"center" }}>
+        <Box sx={{ bgcolor:"error.main",display:"flex", flexDirection:"column", flexGrow: 1, justifyContent:"center",p:2 }}>
 
         <CardMedia
             title="searchLogo"
@@ -78,7 +78,7 @@ export const SummonerSearchScreen = () => {
                 mb:5,
                 ml:"auto",
                 mr:"auto",
-                pt:1.5,
+                pt:1,
                 pb:0.5,
                 backgroundColor: "#272727",
                 borderRadius: 10,
