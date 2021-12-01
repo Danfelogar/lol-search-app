@@ -7,6 +7,6 @@ export const types ={
 
     getSummonerRegion: '[summoner] get region summoner',
     getSummonerByName: '[summoner] get data summoner',
-    getChampionMastery: '[summoner] get champion mastery',
+    getClearSummoner: '[summoner] clear summoner',
     getStatsOfRankeds: '[summoner] get rankeds stats',
 }

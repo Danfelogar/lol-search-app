@@ -2,7 +2,7 @@ import { types } from '../types/types';
 import { summonerServices } from '../servicies/summoner';
 
 
-const { getSummonerByName, getStatsOfRankedsByEncryptedId, getChampionMasteryByencryptedId } = summonerServices();
+const { getSummonerByName, getStatsOfRankedsByEncryptedId } = summonerServices();
 
 const actGetSummonerRegion =(region)=>(dispatch)=>{
     try {
@@ -40,16 +40,10 @@ const actGetStatsOfRankedsByEncryptedId = (region,encryptedId)=>async(dispatch)=
 
 }
 
-const  actGetChampionMasteryByencryptedId=(region,encryptedId)=>async(dispatch)=>{
-    try {
-        const res = await getChampionMasteryByencryptedId(region,encryptedId);
-        dispatch({
-            type: types.getChampionMastery,
-            payload: res.data
-        })
-    } catch (e) {
-        console.log(e);
-    }
+const actGetClearSummoner = ()=>(dispatch)=>{
+    dispatch({
+        type:types.getClearSummoner
+    })
 }
 
 export const summonerActions =()=>{
@@ -57,6 +51,6 @@ export const summonerActions =()=>{
         actGetSummonerRegion,
         actGetSummonerByName,
         actGetStatsOfRankedsByEncryptedId,
-        actGetChampionMasteryByencryptedId
+        actGetClearSummoner
     }
 }

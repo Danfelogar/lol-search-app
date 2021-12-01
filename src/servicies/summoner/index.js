@@ -12,13 +12,6 @@ export const summonerServices = ()=>{
         })
     }
 
-    const getChampionMasteryByencryptedId =(region,encryptedId)=>{
-        return axios({
-            method: 'GET',
-            url: `${region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedId}?api_key=${apiKey}`
-        })
-    }
-
     const getStatsOfRankedsByEncryptedId =(region,encryptedId)=>{
         return axios({
             method: 'GET',
@@ -28,7 +21,6 @@ export const summonerServices = ()=>{
 
     return{
         getSummonerByName,
-        getChampionMasteryByencryptedId,
         getStatsOfRankedsByEncryptedId
     }
 }

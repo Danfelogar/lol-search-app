@@ -3,7 +3,6 @@ import { types } from "../types/types"
 const initialState ={
     summonerRegion:[],
     summonerByName:[],
-    championMastery:[],
     statsOfRankeds:[],
 }
 
@@ -19,16 +18,13 @@ export const summonerReducer = (state=initialState, action) => {
                 ...state,
                 summonerByName: action.payload
             }
-        case types.getChampionMastery:
-            return{
-                ...state,
-                championMastery: action.payload
-            }
         case types.getStatsOfRankeds:
             return{
                 ...state,
                 statsOfRankeds: action.payload
             }
+        case types.getClearSummoner:
+            return initialState
         default:
             return state;
     }

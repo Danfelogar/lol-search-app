@@ -20,13 +20,12 @@ export const useSummonerData = () => {
     const { summonerId } = useParams();
     console.log(summonerId)
 
-    const { actGetStatsOfRankedsByEncryptedId,actGetChampionMasteryByencryptedId } = summonerActions();
+    const { actGetStatsOfRankedsByEncryptedId } = summonerActions();
 
     const { summonerRegion,summonerByName,championMastery,statsOfRankeds } = useSelector(state => state.summoner);
 
     useEffect(() => {
             dispatch(actGetStatsOfRankedsByEncryptedId(summonerRegion,summonerId));
-            dispatch(actGetChampionMasteryByencryptedId(summonerRegion,summonerId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [summonerId]);
 
