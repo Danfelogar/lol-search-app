@@ -3,6 +3,8 @@ import { AppBar, Box, MenuItem, TextField, Toolbar, IconButton, CardMedia,Typogr
 import { styled } from '@mui/system';
 import SearchIcon from '@mui/icons-material/Search';
 
+import { useSummonerSearch } from '../../hooks/useSummonerSearch';
+
 const CssTextField = styled(TextField)({
         '& label.Mui-focused': {
         color: '#ffb703',
@@ -31,26 +33,56 @@ const CssTextField = styled(TextField)({
 
 const currencies = [
     {
-        value: 'USD',
-        label: 'happy',
+        value: 'BR1',
+        label: 'BR',
     },
     {
-        value: 'EUR',
-        label: 'happy',
+        value: 'EUN1',
+        label: 'EUNE',
     },
     {
-        value: 'BTC',
-        label: 'happy',
+        value: 'EUW1',
+        label: 'EUW',
     },
     {
-        value: 'JPY',
-        label: 'happy',
+        value: 'JP1',
+        label: 'JP',
+    },
+    {
+        value: 'KR',
+        label: 'KR',
+    },
+    {
+        value: 'LA1',
+        label: 'LAN',
+    },
+    {
+        value: 'LA2',
+        label: 'LAS',
+    },
+    {
+        value: 'NA1',
+        label: 'NA',
+    },
+    {
+        value: 'OC1',
+        label: 'OCE',
+    },
+    {
+        value: 'TR1',
+        label: 'TR',
+    },
+    {
+        value: 'RU',
+        label: 'RU',
     },
 ];
 
 export const SummonerSearchScreen = () => {
 
-    const [currency, setCurrency] = React.useState('EUR');
+    const { summonerName, handleInputChange, handleSummonerByName, } = useSummonerSearch();
+
+    const [currency, setCurrency] = React.useState('LA1');
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
@@ -90,9 +122,16 @@ export const SummonerSearchScreen = () => {
                 <Toolbar>
                 <Box
                 className="appnavWrapper">
-                    <CssTextField fullWidth label="Search summoner" id="custom-css-outlined-input fullWidth" />
+                    <CssTextField
+                    fullWidth
+                    label="Search summoner" id="custom-css-outlined-input fullWidth"
+                    name="summonerName"
+                    onChange={handleInputChange}
+                    value={summonerName}
+                    autoComplete="off"
+                    />
                 </Box>
-                <Box sx={{ minWidth: 100,ml:0.5 }}>
+                <Box sx={{ minWidth: 90,ml:0.5 }}>
                 <TextField
                     id="outlined-select-currency"
                     select
@@ -133,7 +172,11 @@ export const SummonerSearchScreen = () => {
                 </TextField>
                 </Box>
                 <Box sx={{borderRadius:"50%",bgcolor:"secondary.main"}}>
-                    <IconButton  aria-label="delete" size="large">
+                    <IconButton
+                    aria-label="delete"
+                    size="large"
+                    onClick={()=>handleSummonerByName(currency,summonerName)}
+                    >
                         <SearchIcon fontSize="inherit" />
                     </IconButton>
                 </Box>

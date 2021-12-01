@@ -14,7 +14,7 @@ export const SummonerSearch = () => {
                 component={ SummonerSearchScreen } />
                 <Route
                 exact
-                path="/summonerSearch/stats"
+                path="/summonerSearch/:summonerId"
                 component={ SummonerStatsScreen } />
 
                 <Redirect to="/summonerSearch" />

@@ -1,7 +1,7 @@
 import { types } from '../types/types';
 import { championsServices } from '../servicies/champions/index';
-const { getChampionsList, getChampionByName } = championsServices();
 
+const { getChampionsList, getChampionByName } = championsServices();
 
 const actGetChampionsList = () =>async(dispatch)=>{
     try {
