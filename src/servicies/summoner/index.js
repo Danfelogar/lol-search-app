@@ -3,7 +3,7 @@ import axios from '../config2';
 
 export const summonerServices = ()=>{
 
-    const apiKey = 'RGAPI-f28b5bfe-63a3-413f-99e4-2a7e0068b12c';//se debe de cambiar cada 24h
+    const apiKey = 'RGAPI-8c67105d-0c3b-4920-9f00-8514c3f71e70';//se debe de cambiar cada 24h
 
     const getSummonerByName =(region,summonerName)=>{
         return axios({

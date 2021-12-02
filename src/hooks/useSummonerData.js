@@ -18,7 +18,6 @@ export const useSummonerData = () => {
     const dispatch = useDispatch();
 
     const { summonerId } = useParams();
-    console.log(summonerId)
 
     const { actGetStatsOfRankedsByEncryptedId } = summonerActions();
 

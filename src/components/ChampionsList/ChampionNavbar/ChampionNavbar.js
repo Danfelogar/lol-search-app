@@ -140,34 +140,62 @@ export const ChampionNavbar = () => {
                         <ButtonGroup variant="text" aria-label="text button group">
                             <Button variant="text" color="success"  style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("All")}
                             >All</Button>
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("Assassin")} >Assassin</Button>
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("Fighter")}
                             >Fighter</Button>
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("Mage")}
                             >Mage</Button>
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("Marksman")}
                             >Marksman</Button>
                             <Button variant="text" color="success" style={{
                                 borderRight: '1.2px solid #edf2f4'
-                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0}}
+                            }} sx={{pl: 0.4, pt: 0, pr:0.4 ,pb: 0,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("Support")}
                             >Support</Button>
-                            <Button variant="text" color="success" sx={{pl: 0.4, pt: 0, pr:0.4 ,pb:0 }}
+                            <Button variant="text" color="success" sx={{pl: 0.4, pt: 0, pr:0.4 ,pb:0 ,
+                            "&:focus": {
+                                color: "secondary.main"
+                            }
+                            }}
                             onClick={()=>handleTag("Tank")}
                             >Tank</Button>
                         </ButtonGroup>

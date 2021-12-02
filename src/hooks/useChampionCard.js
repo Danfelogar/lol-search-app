@@ -35,7 +35,10 @@ export const useChampionCard = () => {
     }, []);
 
     useEffect(() => {
-        champions.length === 0 && dispatch(actGetChampionsList())
+
+        if(champions.length === 0){
+            dispatch(actGetChampionsList())
+        }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

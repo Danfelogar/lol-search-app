@@ -32,6 +32,7 @@ export const useSummonerSearch = () => {
         if(id !== undefined ){
             history.push(`/summonerSearch/${id}`)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
     const handleGetClearAndPush =()=>{

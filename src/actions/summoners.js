@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { types } from '../types/types';
 import { summonerServices } from '../servicies/summoner';
 
@@ -24,6 +25,7 @@ const actGetSummonerByName =(region,summonerName)=>async(dispatch)=>{
         });
     } catch (e) {
         console.log(e);
+        Swal.fire('Error','The summoner name is not found in the database please try another way', 'error' );
     }
 }
 
